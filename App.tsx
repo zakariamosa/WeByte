@@ -21,7 +21,7 @@ const navigator = createStackNavigator(
       headerStyle: {
         backgroundColor: 'green'
       },
-      headertitleStyle: {
+      headerTitleStyle: {
         fontSize:35,
         color:'white',
       },

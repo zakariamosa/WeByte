@@ -2,13 +2,13 @@ import createDataContext from './createDataContext';
 
 const ProductReducer = (state, action) => {
   switch (action.type) {
-    case 'edit_blogpost':
-      return state.map((blogPost) => {
-        return blogPost.id === action.payload.id ? action.payload : blogPost;
+    case 'edit_productgpost':
+      return state.map((productgPost) => {
+        return productgPost.id === action.payload.id ? action.payload : productgPost;
       });
-    case 'delete_blogpost':
-      return state.filter((blogPost) => blogPost.id !== action.payload);
-    case 'add_blogpost':
+    case 'delete_productgpost':
+      return state.filter((productgPost) => productgPost.id !== action.payload);
+    case 'add_productgpost':
       return [
         ...state,
         {
@@ -25,7 +25,7 @@ const ProductReducer = (state, action) => {
 
 const addProductPost = (dispatch) => {
   return (productName, productType, productPrice, callback) => {
-    dispatch({ type: 'add_blogpost', payload: { productName, productType, productPrice } });
+    dispatch({ type: 'add_productgpost', payload: { productName, productType, productPrice } });
     if (callback) {
       callback();
     }
@@ -33,13 +33,13 @@ const addProductPost = (dispatch) => {
 };
 const deleteProductPost = (dispatch) => {
   return (id) => {
-    dispatch({ type: 'delete_blogpost', payload: id });
+    dispatch({ type: 'delete_productgpost', payload: id });
   };
 };
 const editProductPost = (dispatch) => {
   return (id, productName, productType, productPrice, callback) => {
     dispatch({
-      type: 'edit_blogpost',
+      type: 'edit_productgpost',
       payload: { id, productName, productType, productPrice },
     });
     if (callback) {

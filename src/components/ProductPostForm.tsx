@@ -6,7 +6,7 @@ import { View, Text, StyleSheet, TextInput, Button } from 'react-native';
 
 const defaultValue = 'Integrated';
 
-const BlogPostForm = ({ onSubmit, initialValues }) => {
+const ProductPostForm = ({ onSubmit, initialValues }) => {
   const [productName, setproductName] = useState(initialValues.productName);
   const [productType, setproductType] = useState(initialValues.productType);
   const [productPrice, setproductPrice] = useState(initialValues.productPrice);
@@ -38,7 +38,7 @@ const BlogPostForm = ({ onSubmit, initialValues }) => {
   );
 };
 
-BlogPostForm.defaultProps = {
+ProductPostForm.defaultProps = {
   initialValues: {
     productName: '',
     productType: '',
@@ -62,4 +62,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default BlogPostForm;
+export default ProductPostForm;

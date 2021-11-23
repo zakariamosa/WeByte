@@ -1,19 +1,19 @@
 import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { Context } from '../context/ProductContext';
-import BlogPostForm from '../components/ProductPostForm';
+import ProductPostForm from '../components/ProductPostForm';
 
 const EditScreen = ({ navigation }) => {
   const id = navigation.getParam('id');
-  const { state, editBlogPost } = useContext(Context);
+  const { state, editProductPost } = useContext(Context);
 
   const blogPost = state.find(blogPost => blogPost.id === id);
 
   return (
-    <BlogPostForm
+    <ProductPostForm
       initialValues={{ productName: blogPost.productName, productType: blogPost.productType,productPrice: blogPost.productPrice }}
       onSubmit={(productName, productType, productPrice) => {
-        editBlogPost(id, productName, productType, productPrice,  () => navigation.pop());
+        editProductPost(id, productName, productType, productPrice,  () => navigation.pop());
       }}
     />
   );

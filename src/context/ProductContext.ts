@@ -1,6 +1,6 @@
 import createDataContext from './createDataContext';
 
-const blogReducer = (state, action) => {
+const ProductReducer = (state, action) => {
   switch (action.type) {
     case 'edit_blogpost':
       return state.map((blogPost) => {
@@ -23,7 +23,7 @@ const blogReducer = (state, action) => {
   }
 };
 
-const addBlogPost = (dispatch) => {
+const addProductPost = (dispatch) => {
   return (productName, productType, productPrice, callback) => {
     dispatch({ type: 'add_blogpost', payload: { productName, productType, productPrice } });
     if (callback) {
@@ -31,12 +31,12 @@ const addBlogPost = (dispatch) => {
     }
   };
 };
-const deleteBlogPost = (dispatch) => {
+const deleteProductPost = (dispatch) => {
   return (id) => {
     dispatch({ type: 'delete_blogpost', payload: id });
   };
 };
-const editBlogPost = (dispatch) => {
+const editProductPost = (dispatch) => {
   return (id, productName, productType, productPrice, callback) => {
     dispatch({
       type: 'edit_blogpost',
@@ -49,7 +49,7 @@ const editBlogPost = (dispatch) => {
 };
 
 export const { Context, Provider } = createDataContext(
-  blogReducer,
-  { addBlogPost, deleteBlogPost, editBlogPost },
+  ProductReducer,
+  { addProductPost, deleteProductPost, editProductPost },
   [{ productName: 'Product Name Test', productType: 'Product Type Test', productPrice:'Product Price Test', id: 1 }]
 );

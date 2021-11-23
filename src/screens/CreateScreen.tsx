@@ -1,15 +1,15 @@
 import React, { useContext } from 'react';
 import { StyleSheet } from 'react-native';
 import { Context } from '../context/ProductContext';
-import BlogPostForm from '../components/ProductPostForm';
+import ProductPostForm from '../components/ProductPostForm';
 
 const CreateScreen = ({ navigation }) => {
-  const { addBlogPost } = useContext(Context);
+  const  {addProductPost}  = useContext(Context);
 
   return (
-    <BlogPostForm
+    <ProductPostForm
       onSubmit={(productName, productType, productPrice) => {
-        addBlogPost(productName, productType,productPrice, () => navigation.navigate('Index'));
+        addProductPost(productName, productType,productPrice, () => navigation.navigate('Index'));
       }}
     />
   );

@@ -51,5 +51,5 @@ const editProductPost = (dispatch) => {
 export const { Context, Provider } = createDataContext(
   ProductReducer,
   { addProductPost, deleteProductPost, editProductPost },
-  [{ productName: 'Product Name Test', productType: 'Product Type Test', productPrice:'Product Price Test', id: 1 }]
+  [{ productName: 'P Name', productType: 'P Type', productPrice:'P Price', id: 1 }]
 );
